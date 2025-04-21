@@ -1,15 +1,4 @@
 {
-    "title": {
-        "media": {
-            "url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-            "caption": "大型語言模型發展時間線",
-            "credit": "AI Technology Evolution"
-        },
-        "text": {
-            "headline": "大型語言模型發展時間線",
-            "text": "<p>本時間線記錄了從2017年Transformer架構提出到2025年AI Agent技術崛起的重要里程碑。</p>"
-        }
-    },
     "events": [
         {
             "start_date": {

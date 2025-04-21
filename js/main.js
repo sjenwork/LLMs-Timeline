@@ -9,12 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         // 淡入淡出效果
         handleScrollFadeEffect();
+        // 固定類別頭部
+        handleStickyCategories();
     });
     
     // 處理窗口調整大小事件
     window.addEventListener('resize', () => {
         // 調整時間軸高度
         adjustTimelineHeight();
+        // 更新固定頭部
+        handleStickyCategories();
     });
     
     // 初始調整時間軸高度
@@ -23,6 +27,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // 更新頁腳年份
     updateFooterYear();
 });
+
+/**
+ * 處理公司類別頭部的固定效果
+ */
+function handleStickyCategories() {
+    const header = document.querySelector('.main-header');
+    const categories = document.querySelector('.company-categories');
+    const container = document.querySelector('.container');
+    
+    if (!header || !categories || !container) return;
+    
+    const headerHeight = header.offsetHeight;
+    const containerTop = container.getBoundingClientRect().top;
+    const categoriesHeight = categories.offsetHeight;
+    
+    // 當container滾動到main-header底部時，固定categories
+    if (containerTop <= headerHeight) {
+        categories.classList.add('fixed');
+    } else {
+        categories.classList.remove('fixed');
+    }
+    
+    // 調整timeline-wrapper的上邊距，避免內容被固定的categories遮擋
+    const timelineWrapper = document.querySelector('.timeline-wrapper');
+    if (timelineWrapper && categories.classList.contains('fixed')) {
+        timelineWrapper.style.marginTop = `${categoriesHeight}px`;
+    } else if (timelineWrapper) {
+        timelineWrapper.style.marginTop = '0';
+    }
+}
 
 /**
  * 滾動淡入淡出效果
@@ -53,10 +87,11 @@ function handleScrollFadeEffect() {
  */
 function adjustTimelineHeight() {
     const timelineWrapper = document.querySelector('.timeline-wrapper');
-    const headerHeight = document.querySelector('.company-categories').offsetHeight;
+    const headerHeight = document.querySelector('.main-header').offsetHeight;
+    const categoriesHeight = document.querySelector('.company-categories').offsetHeight;
     
     if (timelineWrapper) {
-        timelineWrapper.style.maxHeight = `calc(100vh - ${headerHeight + 40}px)`;
+        timelineWrapper.style.maxHeight = `calc(100vh - ${headerHeight + categoriesHeight + 40}px)`;
     }
 }
 

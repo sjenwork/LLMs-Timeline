@@ -27,8 +27,10 @@ body {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     padding: 15px 30px;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     display: flex;
     justify-content: space-between;
@@ -82,6 +84,7 @@ body {
     width: 100vw;
     margin: 0 0;
     padding: 20px;
+    padding-top: 80px; /* 為固定的header留出空間 */
 }
 
 /* 公司分類樣式 - 作為表頭 */
@@ -90,10 +93,20 @@ body {
     grid-template-columns: 70px repeat(5, 1fr);
     border-bottom: 2px solid var(--border-color);
     background-color: var(--card-bg-color);
-    position: sticky;
+    position: relative;
     top: 0;
-    z-index: 100;
+    z-index: 99;
     padding: 15px 0;
+    width: 100%;
+}
+
+.company-categories.fixed {
+    position: fixed;
+    top: 60px; /* main-header的高度，需要根據實際情況調整 */
+    left: 0;
+    right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .time-column-header,
@@ -157,14 +170,13 @@ body {
     position: relative;
     overflow-y: auto;
     max-height: calc(100vh - 120px);
+    z-index: 98;
 }
 
 /* 時間軸垂直線樣式 */
 .timeline-content {
     position: relative;
 }
-
-
 
 /* 日期圓點樣式 */
 .date-point {
@@ -193,8 +205,6 @@ body {
     position: relative;
     height: 100%;
 }
-
-
 
 /* 頁腳樣式 */
 .main-footer {
