@@ -109,3 +109,44 @@ body.filtering .company-cell[style*="display: block"] {
     transform: translateX(0);
     opacity: 1;
 } 
+
+
+.time-column-header, .company-column {
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-bottom: 3px solid transparent;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .company-categories {
+        grid-template-columns: 60px repeat(5, 1fr);
+    }
+    
+    .time-column-header, .company-column {
+        padding: 10px 5px;
+        font-size: 0.85rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.25rem;
+    }
+    
+    .main-header {
+        padding: 12px 20px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}

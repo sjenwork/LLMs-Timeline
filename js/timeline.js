@@ -187,7 +187,7 @@ class Timeline {
                 const dateDay = date.getDate();
                 const datePoint = document.createElement('div');
                 datePoint.className = 'date-point';
-                datePoint.innerHTML = `<span>${dateMonth}</span><span>${dateDay}</span>`;
+                datePoint.innerHTML = `<span>${dateMonth}.${dateDay}</span>`;
                 dateContainer.appendChild(datePoint);
                 row.appendChild(dateContainer);
                 
