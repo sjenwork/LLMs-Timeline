@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 初始調整時間軸高度
     adjustTimelineHeight();
+    
+    // 更新頁腳年份
+    updateFooterYear();
 });
 
 /**
@@ -54,5 +57,15 @@ function adjustTimelineHeight() {
     
     if (timelineWrapper) {
         timelineWrapper.style.maxHeight = `calc(100vh - ${headerHeight + 40}px)`;
+    }
+}
+
+/**
+ * 更新頁腳年份
+ */
+function updateFooterYear() {
+    const currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
     }
 } 

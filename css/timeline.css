@@ -20,15 +20,10 @@
     position: relative;
     margin-bottom: 30px;
     padding: 5px 0;
-    background: linear-gradient(to bottom, rgba(240, 242, 245, 0.9), rgba(230, 235, 240, 0.7));
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* 偶數年份使用不同的背景漸層 */
-.year-section:nth-child(even) {
-    background: linear-gradient(to bottom, rgba(235, 240, 250, 0.9), rgba(225, 235, 245, 0.7));
-}
 
 .year-marker {
     position: sticky;
@@ -36,13 +31,15 @@
     font-size: 30px;
     font-weight: bold;
     padding: 15px 0;
-    color: #333;
+    color: #fd7373;
     grid-column: 1/-1;
     z-index: 10;
     width: 100%;
-    backdrop-filter: blur(2px);
     text-align: center;
-    background-color: rgba(230, 207, 154, 0.5);
+}
+
+[data-theme="dark"] .year-marker {
+    color: #f2d058;
 }
 
 /* 時間軸行 - 每個時間點一行 */
@@ -52,35 +49,13 @@
     position: relative;
     margin-bottom: 20px;
     align-items: start;
-    padding: 5px 0;
+    padding: 20px 0;
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+    border-bottom: 1px solid rgba(69, 65, 65, 0.2);
 }
 
-/* 水平時間線 */
-.timeline-row::after {
-    content: '';
-    position: absolute;
-    top: 45px; /* date-point中心位置 */
-    left: 35px; /* date-point的中心位置 */
-    right: 0;
-    height: 1px;
-    background-color: rgba(115, 115, 115, 0.5);
-    z-index: 0;
-}
-
-/* 手機版調整 */
-@media (max-width: 767px) {
-    .timeline-row::after {
-        top: 40px;
-    }
-}
-
-/* 平板版調整 */
-@media (min-width: 768px) and (max-width: 991px) {
-    .timeline-row::after {
-        top: 45px;
-    }
+[data-theme="dark"] .timeline-row {
+    border-bottom: 1px solid rgba(232, 228, 228, 0.2);
 }
 
 .timeline-row:last-child {
@@ -139,9 +114,6 @@
         left: 33px;
     }
     
-    .timeline-row::after {
-        top: 55px;
-    }
 }
 
 /* 公司單元格 */
@@ -188,6 +160,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+[data-theme="dark"] .event-card {
+    background-color: #222;
 }
 
 .event-title {
