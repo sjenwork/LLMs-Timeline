@@ -82,18 +82,6 @@ function handleScrollFadeEffect() {
     });
 }
 
-/**
- * 調整時間軸高度
- */
-function adjustTimelineHeight() {
-    const timelineWrapper = document.querySelector('.timeline-wrapper');
-    const headerHeight = document.querySelector('.main-header').offsetHeight;
-    const categoriesHeight = document.querySelector('.company-categories').offsetHeight;
-    
-    if (timelineWrapper) {
-        timelineWrapper.style.maxHeight = `calc(100vh - ${headerHeight + categoriesHeight + 40}px)`;
-    }
-}
 
 /**
  * 更新頁腳年份
