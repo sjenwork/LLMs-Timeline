@@ -11,8 +11,12 @@
     bottom: 0;
     left: 35px;
     width: 4px;
-    background-color: #e0e0e0;
+    background-color: #524e4eb5;
     z-index: 1;
+}
+
+[data-theme="dark"] .timeline-content::before {
+    background-color: #e0e0e0a0;
 }
 
 /* 年份區塊 */
@@ -135,6 +139,10 @@
     cursor: pointer;
 }
 
+[data-theme="dark"] .timeline-item {
+    background-color: #222;
+}
+
 .timeline-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
@@ -162,9 +170,6 @@
     align-items: flex-start;
 }
 
-[data-theme="dark"] .event-card {
-    background-color: #222;
-}
 
 .event-title {
     font-size: 16px;

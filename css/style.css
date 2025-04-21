@@ -164,16 +164,7 @@ body {
     position: relative;
 }
 
-.timeline-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 35px;
-    width: 4px;
-    background-color: var(--timeline-line-color);
-    z-index: 1;
-}
+
 
 /* 日期圓點樣式 */
 .date-point {

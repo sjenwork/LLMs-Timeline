@@ -24,7 +24,7 @@
             },
             "text": {
                 "headline": "Google發布Transformer架構",
-                "text": "<p>Google在<i>arXiv</i>上發表論文《Attention Is All You Need》，提出了革命性的Transformer架構。</p><p><strong>核心創新：</strong></p><ul><li>完全基於注意力機制(Attention Mechanism)</li><li>摒棄了傳統循環神經網路(RNN)和卷積神經網路(CNN)的遞迴結構</li><li>實現並行計算，大幅提高訓練效率和模型性能</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://arxiv.org/abs/1706.03762' target='_blank'>原始論文</a></li><li><a href='https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html' target='_blank'>Google AI Blog介紹</a></li></ul>"
+                "text": "Google在*arXiv*上發表論文《Attention Is All You Need》，提出了革命性的Transformer架構。\n\n**核心創新：**\n\n* 完全基於注意力機制(Attention Mechanism)\n* 摒棄了傳統循環神經網路(RNN)和卷積神經網路(CNN)的遞迴結構\n* 實現並行計算，大幅提高訓練效率和模型性能\n\n**參考資料：**\n\n* [原始論文](https://arxiv.org/abs/1706.03762)\n* [Google AI Blog介紹](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)"
             }
         },
         {
@@ -40,7 +40,7 @@
             },
             "text": {
                 "headline": "OpenAI發布GPT-1",
-                "text": "<p>OpenAI發布首個GPT模型，參數量約1.17億，是首個將Transformer與無監督預訓練結合的大型語言模型。</p><p><strong>核心特點：</strong></p><ul><li>基於Transformer的12層Decoder-only架構</li><li>在BooksCorpus上進行無監督預訓練</li><li>通過預測下一個詞來學習語言模式</li><li>確立了「大規模無監督預訓練 + 特定任務微調」的技術路線</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf' target='_blank'>研究論文</a></li><li><a href='https://openai.com/index/language-unsupervised/' target='_blank'>OpenAI官方介紹</a></li></ul>"
+                "text": "OpenAI發布首個GPT模型，參數量約1.17億，是首個將Transformer與無監督預訓練結合的大型語言模型。\n\n**核心特點：**\n\n* 基於Transformer的12層Decoder-only架構\n* 在BooksCorpus上進行無監督預訓練\n* 通過預測下一個詞來學習語言模式\n* 確立了「大規模無監督預訓練 + 特定任務微調」的技術路線\n\n**參考資料：**\n\n* [研究論文](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)\n* [OpenAI官方介紹](https://openai.com/index/language-unsupervised/)"
             }
         },
         {
@@ -56,7 +56,7 @@
             },
             "text": {
                 "headline": "Google發布BERT",
-                "text": "<p>Google發布BERT (Bidirectional Encoder Representations from Transformers)，改進了雙向編碼表示，成為自然語言處理的重要里程碑。</p><p><strong>核心創新：</strong></p><ul><li>真正的雙向性，同時考慮詞語左右兩側的上下文</li><li>遮罩語言模型(MLM)預訓練任務</li><li>下一句預測(NSP)任務</li><li>基於Transformer的Encoder架構</li></ul><p><strong>模型規格：</strong></p><ul><li>BERT-Base: 12層Transformer編碼器，參數量約1.1億</li><li>BERT-Large: 24層Transformer編碼器，參數量約3.4億</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://arxiv.org/abs/1810.04805' target='_blank'>研究論文</a></li><li><a href='https://ai.googleblog.com/2018/11/open-sourcing-bert-state-of-art-pre.html' target='_blank'>Google AI Blog介紹</a></li></ul>"
+                "text": "Google發布BERT (Bidirectional Encoder Representations from Transformers)，改進了雙向編碼表示，成為自然語言處理的重要里程碑。\n\n**核心創新：**\n\n* 真正的雙向性，同時考慮詞語左右兩側的上下文\n* 遮罩語言模型(MLM)預訓練任務\n* 下一句預測(NSP)任務\n* 基於Transformer的Encoder架構\n\n**模型規格：**\n\n* BERT-Base: 12層Transformer編碼器，參數量約1.1億\n* BERT-Large: 24層Transformer編碼器，參數量約3.4億\n\n**參考資料：**\n\n* [研究論文](https://arxiv.org/abs/1810.04805)\n* [Google AI Blog介紹](https://ai.googleblog.com/2018/11/open-sourcing-bert-state-of-art-pre.html)"
             }
         },
         {
@@ -72,7 +72,7 @@
             },
             "text": {
                 "headline": "OpenAI發布GPT-2",
-                "text": "<p>OpenAI發布GPT-2，參數量達15億，質量明顯提升，但因安全考慮初期僅有限發布。</p><p><strong>核心進展：</strong></p><ul><li>參數規模擴大至15億</li><li>訓練數據更多樣化(WebText)</li><li>顯著提升文本生成質量和連貫性</li><li>展現出零樣本學習能力</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://openai.com/research/better-language-models' target='_blank'>OpenAI研究介紹</a></li></ul>"
+                "text": "OpenAI發布GPT-2，參數量達15億，質量明顯提升，但因安全考慮初期僅有限發布。\n\n**核心進展：**\n\n* 參數規模擴大至15億\n* 訓練數據更多樣化(WebText)\n* 顯著提升文本生成質量和連貫性\n* 展現出零樣本學習能力\n\n**參考資料：**\n\n* [OpenAI研究介紹](https://openai.com/research/better-language-models)"
             }
         },
         {
@@ -88,7 +88,7 @@
             },
             "text": {
                 "headline": "OpenAI發布GPT-3",
-                "text": "<p>OpenAI發布GPT-3，參數量達1750億，標誌著大型語言模型規模的重大飛躍，展現出上下文學習能力。</p><p><strong>核心突破：</strong></p><ul><li>參數規模達1750億，是當時最大的語言模型</li><li>強大的少樣本學習能力(Few-shot Learning)</li><li>上下文學習能力顯著提升</li><li>通過API商業化，開啟新的AI即服務模式</li></ul><p><strong>技術細節：</strong></p><ul><li>96層Transformer Decoder架構</li><li>訓練數據包括Common Crawl、WebText2、Books1、Books2和Wikipedia</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://arxiv.org/abs/2005.14165' target='_blank'>研究論文</a></li><li><a href='https://openai.com/research/gpt-3-apps' target='_blank'>OpenAI介紹</a></li></ul>"
+                "text": "OpenAI發布GPT-3，參數量達1750億，標誌著大型語言模型規模的重大飛躍，展現出上下文學習能力。\n\n**核心突破：**\n\n* 參數規模達1750億，是當時最大的語言模型\n* 強大的少樣本學習能力(Few-shot Learning)\n* 上下文學習能力顯著提升\n* 通過API商業化，開啟新的AI即服務模式\n\n**技術細節：**\n\n* 96層Transformer Decoder架構\n* 訓練數據包括Common Crawl、WebText2、Books1、Books2和Wikipedia\n\n**參考資料：**\n\n* [研究論文](https://arxiv.org/abs/2005.14165)\n* [OpenAI介紹](https://openai.com/research/gpt-3-apps)"
             }
         },
         {
@@ -104,7 +104,7 @@
             },
             "text": {
                 "headline": "Google發布T5模型",
-                "text": "<p>Google發布T5 (Text-to-Text Transfer Transformer) 模型，統一了多任務訓練框架。</p><p><strong>核心創新：</strong></p><ul><li>統一的「文本到文本」框架將所有NLP任務轉換為相同格式</li><li>基於標準的Encoder-Decoder Transformer架構</li><li>新的預訓練目標：跨度破壞(Span Corruption)</li><li>大規模、乾淨的預訓練數據集(C4)</li></ul><p><strong>模型規格：</strong></p><ul><li>多種參數規模，從Small到11B(110億)參數</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://arxiv.org/abs/1910.10683' target='_blank'>研究論文</a></li><li><a href='https://ai.googleblog.com/2020/02/exploring-transfer-learning-with-t5.html' target='_blank'>Google AI Blog介紹</a></li></ul>"
+                "text": "Google發布T5 (Text-to-Text Transfer Transformer) 模型，統一了多任務訓練框架。\n\n**核心創新：**\n\n* 統一的「文本到文本」框架將所有NLP任務轉換為相同格式\n* 基於標準的Encoder-Decoder Transformer架構\n* 新的預訓練目標：跨度破壞(Span Corruption)\n* 大規模、乾淨的預訓練數據集(C4)\n\n**模型規格：**\n\n* 多種參數規模，從Small到11B(110億)參數\n\n**參考資料：**\n\n* [研究論文](https://arxiv.org/abs/1910.10683)\n* [Google AI Blog介紹](https://ai.googleblog.com/2020/02/exploring-transfer-learning-with-t5.html)"
             }
         },
         {
@@ -120,7 +120,7 @@
             },
             "text": {
                 "headline": "OpenAI發布DALL·E和CLIP",
-                "text": "<p>OpenAI發布DALL·E和CLIP，分別用於圖像生成和圖文理解，標誌著多模態AI技術的重要進展。</p><p><strong>DALL·E特點：</strong></p><ul><li>基於GPT-3架構的變體</li><li>能夠從文本描述生成創意圖像</li><li>理解複雜的視覺概念和組合</li></ul><p><strong>CLIP特點：</strong></p><ul><li>Contrastive Language-Image Pre-training</li><li>學習圖像和文本之間的關係</li><li>零樣本遷移至各種視覺任務</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://openai.com/research/dall-e' target='_blank'>DALL·E介紹</a></li><li><a href='https://openai.com/research/clip' target='_blank'>CLIP介紹</a></li></ul>"
+                "text": "OpenAI發布DALL·E和CLIP，分別用於圖像生成和圖文理解，標誌著多模態AI技術的重要進展。\n\n**DALL·E特點：**\n\n* 基於GPT-3架構的變體\n* 能夠從文本描述生成創意圖像\n* 理解複雜的視覺概念和組合\n\n**CLIP特點：**\n\n* Contrastive Language-Image Pre-training\n* 學習圖像和文本之間的關係\n* 零樣本遷移至各種視覺任務\n\n**參考資料：**\n\n* [DALL·E介紹](https://openai.com/research/dall-e)\n* [CLIP介紹](https://openai.com/research/clip)"
             }
         },
         {
@@ -136,7 +136,7 @@
             },
             "text": {
                 "headline": "OpenAI發布ChatGPT",
-                "text": "<p>OpenAI發布ChatGPT，基於GPT-3.5系列，通過RLHF優化，提供更自然的對話體驗，標誌著生成式AI進入大眾視野。</p><p><strong>核心特點：</strong></p><ul><li>基於GPT-3.5系列模型</li><li>使用人類反饋強化學習(RLHF)進行優化</li><li>更好的指令遵循能力</li><li>有害內容生成的降低</li><li>對話能力的大幅提升</li></ul><p><strong>社會影響：</strong></p><ul><li>5天內用戶量突破百萬</li><li>成為歷史上增長最快的消費應用之一</li><li>推動了整個生成式AI行業的爆發</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://openai.com/blog/chatgpt' target='_blank'>OpenAI官方介紹</a></li></ul>"
+                "text": "OpenAI發布ChatGPT，基於GPT-3.5系列，通過RLHF優化，提供更自然的對話體驗，標誌著生成式AI進入大眾視野。\n\n**核心特點：**\n\n* 基於GPT-3.5系列模型\n* 使用人類反饋強化學習(RLHF)進行優化\n* 更好的指令遵循能力\n* 有害內容生成的降低\n* 對話能力的大幅提升\n\n**社會影響：**\n\n* 5天內用戶量突破百萬\n* 成為歷史上增長最快的消費應用之一\n* 推動了整個生成式AI行業的爆發\n\n**參考資料：**\n\n* [OpenAI官方介紹](https://openai.com/blog/chatgpt)"
             }
         },
         {
@@ -152,7 +152,7 @@
             },
             "text": {
                 "headline": "OpenAI發布GPT-4",
-                "text": "<p>OpenAI發布GPT-4，支持多模態輸入，能夠分析文本和圖像，推理能力和安全性顯著提升。</p><p><strong>核心突破：</strong></p><ul><li>支持多模態輸入，能夠理解和分析圖像</li><li>複雜推理能力大幅提升</li><li>上下文窗口擴展(初始為8K，後擴展至32K)</li><li>更強的指令遵循能力</li><li>在專業考試和基準測試上表現優異</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://openai.com/research/gpt-4' target='_blank'>OpenAI研究介紹</a></li></ul>"
+                "text": "OpenAI發布GPT-4，支持多模態輸入，能夠分析文本和圖像，推理能力和安全性顯著提升。\n\n**核心突破：**\n\n* 支持多模態輸入，能夠理解和分析圖像\n* 複雜推理能力大幅提升\n* 上下文窗口擴展(初始為8K，後擴展至32K)\n* 更強的指令遵循能力\n* 在專業考試和基準測試上表現優異\n\n**參考資料：**\n\n* [OpenAI研究介紹](https://openai.com/research/gpt-4)"
             }
         },
         {
@@ -168,7 +168,7 @@
             },
             "text": {
                 "headline": "Google發布Gemini 1.0系列",
-                "text": "<p>Google發布Gemini 1.0系列，包括Ultra、Pro和Nano三個版本，是Google首個原生多模態大型語言模型。</p><p><strong>核心特點：</strong></p><ul><li>原生多模態設計(非模型拼接)</li><li>優化的Transformer解碼器架構</li><li>同時處理文本、圖像、音頻、視頻等多模態數據</li><li>大規模多任務訓練</li></ul><p><strong>版本規格：</strong></p><ul><li>Ultra: 最強大的版本，在多項基準測試上超越GPT-4</li><li>Pro: D平衡能力與效率的版本，用於Google Bard</li><li>Nano: 輕量級版本，可在移動設備上運行</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://blog.google/technology/ai/google-gemini-ai/' target='_blank'>Google官方介紹</a></li></ul>"
+                "text": "Google發布Gemini 1.0系列，包括Ultra、Pro和Nano三個版本，是Google首個原生多模態大型語言模型。\n\n**核心特點：**\n\n* 原生多模態設計(非模型拼接)\n* 優化的Transformer解碼器架構\n* 同時處理文本、圖像、音頻、視頻等多模態數據\n* 大規模多任務訓練\n\n**版本規格：**\n\n* Ultra: 最強大的版本，在多項基準測試上超越GPT-4\n* Pro: D平衡能力與效率的版本，用於Google Bard\n* Nano: 輕量級版本，可在移動設備上運行\n\n**參考資料：**\n\n* [Google官方介紹](https://blog.google/technology/ai/google-gemini-ai/)"
             }
         },
         {
@@ -184,7 +184,7 @@
             },
             "text": {
                 "headline": "Anthropic發布Claude 3系列",
-                "text": "<p>Anthropic發布Claude 3系列，包括Haiku、Sonnet和Opus三個版本，在多個基準測試中表現卓越。</p><p><strong>核心特點：</strong></p><ul><li>首次支持圖像輸入的多模態能力</li><li>視覺推理顯著增強</li><li>更低的幻覺率</li><li>更強的問題解決能力</li></ul><p><strong>版本規格：</strong></p><ul><li>Opus: 最強大版本，性能超越大多數競爭模型</li><li>Sonnet: 平衡性能與速度的中等版本</li><li>Haiku: 快速輕量版本，適合高性能需求場景</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://www.anthropic.com/news/claude-3-family' target='_blank'>Anthropic官方介紹</a></li></ul>"
+                "text": "Anthropic發布Claude 3系列，包括Haiku、Sonnet和Opus三個版本，在多個基準測試中表現卓越。\n\n**核心特點：**\n\n* 首次支持圖像輸入的多模態能力\n* 視覺推理顯著增強\n* 更低的幻覺率\n* 更強的問題解決能力\n\n**版本規格：**\n\n* Opus: 最強大版本，性能超越大多數競爭模型\n* Sonnet: 平衡性能與速度的中等版本\n* Haiku: 快速輕量版本，適合高性能需求場景\n\n**參考資料：**\n\n* [Anthropic官方介紹](https://www.anthropic.com/news/claude-3-family)"
             }
         },
         {
@@ -200,7 +200,7 @@
             },
             "text": {
                 "headline": "Google發布Gemini 1.5 Pro",
-                "text": "<p>Google發布Gemini 1.5 Pro，提供100萬令牌的上下文窗口，建立了長上下文處理的新標準。</p><p><strong>核心突破：</strong></p><ul><li>超長上下文窗口：支持100萬令牌的上下文處理</li><li>視頻理解增強：能夠處理和理解長視頻內容</li><li>代碼處理能力提升：可以分析和理解大型代碼庫</li></ul><p><strong>架構改進：</strong></p><ul><li>混合注意力機制(可能採用稀疏注意力技術)</li><li>更高效的上下文壓縮方法</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://blog.google/technology/ai/google-gemini-1-5-pro-availability/' target='_blank'>Google官方介紹</a></li></ul>"
+                "text": "Google發布Gemini 1.5 Pro，提供100萬令牌的上下文窗口，建立了長上下文處理的新標準。\n\n**核心突破：**\n\n* 超長上下文窗口：支持100萬令牌的上下文處理\n* 視頻理解增強：能夠處理和理解長視頻內容\n* 代碼處理能力提升：可以分析和理解大型代碼庫\n\n**架構改進：**\n\n* 混合注意力機制(可能採用稀疏注意力技術)\n* 更高效的上下文壓縮方法\n\n**參考資料：**\n\n* [Google官方介紹](https://blog.google/technology/ai/google-gemini-1-5-pro-availability/)"
             }
         },
         {
@@ -215,8 +215,8 @@
                 "credit": "OpenAI"
             },
             "text": {
-                "headline": "OpenAI發布GPT-4o",
-                "text": "<p>OpenAI發布GPT-4o ('o' for 'omni')，進一步強化多模態處理能力，響應速度更快，用戶體驗更自然。</p><p><strong>核心特性：</strong></p><ul><li>強化的多模態處理能力(文本、圖像、音頻)</li><li>大幅提升的響應速度</li><li>更自然的對話體驗</li><li>實時語音交互和視覺理解能力</li></ul><p><strong>參考資料：</strong></p><ul><li><a href='https://openai.com/blog/gpt-4o' target='_blank'>OpenAI官方介紹</a></li></ul>"
+"headline": "OpenAI發布GPT-4o",
+                "text": "OpenAI發布GPT-4o ('o' for 'omni')，進一步強化多模態處理能力，響應速度更快，用戶體驗更自然。\n\n**核心特性：**\n\n* 強化的多模態處理能力(文本、圖像、音頻)\n* 大幅提升的響應速度\n* 更自然的對話體驗\n* 實時語音交互和視覺理解能力\n\n**參考資料：**\n\n* [OpenAI官方介紹](https://openai.com/blog/gpt-4o)"
             }
         },
         {
@@ -232,7 +232,7 @@
             },
             "text": {
                 "headline": "Anthropic發布Model Context Protocol (MCP)",
-                "text": "<p>Anthropic發布Model Context Protocol (MCP)，為AI系統提供統一標準，使模型能夠安全訪問工具和外部數據。</p><p><strong>MCP核心定義：</strong></p><ul><li>一個開放標準，定義應用程序如何向大型語言模型提供結構化上下文</li><li>創建模型與外部工具、API和數據源之間的安全雙向連接</li></ul><p><strong>MCP工作原理：</strong></p><ul><li>MCP主機：作為中央樞紐的應用程序</li><li>MCP服務器：暴露特定功能的服務</li><li>MCP客戶端：通常是由語言模型驅動的應用程序</li><li>數據源連接：本地和遠程數據源的標準訪問方式</li></ul><p><strong>行業意義：</strong></p><ul><li>開創了Agent發展的新階段</li><li>建立AI工具使用的共同標準</li></ul>"
+                "text": "Anthropic發布Model Context Protocol (MCP)，為AI系統提供統一標準，使模型能夠安全訪問工具和外部數據。\n\n**MCP核心定義：**\n\n* 一個開放標準，定義應用程序如何向大型語言模型提供結構化上下文\n* 創建模型與外部工具、API和數據源之間的安全雙向連接\n\n**MCP工作原理：**\n\n* MCP主機：作為中央樞紐的應用程序\n* MCP服務器：暴露特定功能的服務\n* MCP客戶端：通常是由語言模型驅動的應用程序\n* 數據源連接：本地和遠程數據源的標準訪問方式\n\n**行業意義：**\n\n* 開創了Agent發展的新階段\n* 建立AI工具使用的共同標準"
             }
         },
         {
@@ -248,7 +248,7 @@
             },
             "text": {
                 "headline": "OpenAI發布Operator",
-                "text": "<p>OpenAI發布Operator，由Computer-Using Agent (CUA)驅動，成為OpenAI發布的第一個AI Agent。</p><p><strong>核心技術：</strong></p><ul><li>Computer-Using Agent (CUA)</li></ul><p><strong>關鍵能力：</strong></p><ul><li>能夠自主使用計算機執行任務</li><li>網頁瀏覽和交互</li><li>文件操作和數據處理</li><li>完成複雜的多步驟任務</li></ul>"
+                "text": "OpenAI發布Operator，由Computer-Using Agent (CUA)驅動，成為OpenAI發布的第一個AI Agent。\n\n**核心技術：**\n\n* Computer-Using Agent (CUA)\n\n**關鍵能力：**\n\n* 能夠自主使用計算機執行任務\n* 網頁瀏覽和交互\n* 文件操作和數據處理\n* 完成複雜的多步驟任務"
             }
         },
         {
@@ -264,7 +264,7 @@
             },
             "text": {
                 "headline": "Anthropic發布Claude 3.7 Sonnet",
-                "text": "<p>Anthropic發布Claude 3.7 Sonnet，引入混合推理方法，在單一系統中結合快速響應和更深入的逐步思考。</p><p><strong>關鍵創新：</strong></p><ul><li>混合推理(Hybrid Reasoning)</li><li>結合快速、直覺式反應(System 1)與深度、逐步思考(System 2)</li><li>在處理複雜問題時能夠切換到更深入的推理模式</li><li>被用戶稱為思考模式(Thinking Mode)</li></ul><p><strong>能力提升：</strong></p><ul><li>程式碼理解和生成能力顯著增強</li><li>複雜問題解決能力提升</li><li>更透明的推理過程展示</li></ul>"
+                "text": "Anthropic發布Claude 3.7 Sonnet，引入混合推理方法，在單一系統中結合快速響應和更深入的逐步思考。\n\n**關鍵創新：**\n\n* 混合推理(Hybrid Reasoning)\n* 結合快速、直覺式反應(System 1)與深度、逐步思考(System 2)\n* 在處理複雜問題時能夠切換到更深入的推理模式\n* 被用戶稱為思考模式(Thinking Mode)\n\n**能力提升：**\n\n* 程式碼理解和生成能力顯著增強\n* 複雜問題解決能力提升\n* 更透明的推理過程展示"
             }
         },
         {
@@ -280,8 +280,8 @@
             },
             "text": {
                 "headline": "Google發布Agent-to-Agent (A2A)協議",
-                "text": "<p>Google發布Agent-to-Agent (A2A)協議，用於AI代理之間的直接通信，與MCP形成互補關係。</p><p><strong>A2A關鍵特性：</strong></p><ul><li>代理發現：通過AgentCard機制讓代理互相發現</li><li>任務協調：支持從快速操作到長時間運行的流程</li><li>安全協作：具有企業級身份驗證</li><li>基於任務的狀態管理</li></ul><p><strong>與MCP的關係：</strong></p><ul><li>A2A專注於代理之間的通信</li><li>MCP專注於代理與工具的連接</li><li>兩者形成互補關係</li></ul><p><strong>行業意義：</strong></p><ul><li>Google同時宣布支持Anthropic的MCP協議</li><li>推動行業標準形成</li><li>展示大型AI公司在標準方面的合作</li></ul>"
+                "text": "Google發布Agent-to-Agent (A2A)協議，用於AI代理之間的直接通信，與MCP形成互補關係。\n\n**A2A關鍵特性：**\n\n* 代理發現：通過AgentCard機制讓代理互相發現\n* 任務協調：支持從快速操作到長時間運行的流程\n* 安全協作：具有企業級身份驗證\n* 基於任務的狀態管理\n\n**與MCP的關係：**\n\n* A2A專注於代理之間的通信\n* MCP專注於代理與工具的連接\n* 兩者形成互補關係\n\n**行業意義：**\n\n* Google同時宣布支持Anthropic的MCP協議\n* 推動行業標準形成\n* 展示大型AI公司在標準方面的合作"
             }
         }
     ]
-} 
+}                

@@ -205,7 +205,7 @@ class Timeline {
                         
                         // 添加點擊事件
                         timelineItem.addEventListener('click', () => {
-                            this.expandCard(event, company);
+                            this.expandcard(event, company);
                         });
                         
                         cell.appendChild(timelineItem);
