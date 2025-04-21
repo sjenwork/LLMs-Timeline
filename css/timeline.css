@@ -1,0 +1,542 @@
+/* 時間軸樣式 */
+.timeline-content {
+    position: relative;
+}
+
+/* 時間軸垂直線 */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 35px;
+    width: 4px;
+    background-color: #e0e0e0;
+    z-index: 1;
+}
+
+/* 年份區塊 */
+.year-section {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 5px 0;
+    background: linear-gradient(to bottom, rgba(240, 242, 245, 0.9), rgba(230, 235, 240, 0.7));
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* 偶數年份使用不同的背景漸層 */
+.year-section:nth-child(even) {
+    background: linear-gradient(to bottom, rgba(235, 240, 250, 0.9), rgba(225, 235, 245, 0.7));
+}
+
+.year-marker {
+    position: sticky;
+    top: 0px;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 15px 0;
+    color: #333;
+    grid-column: 1/-1;
+    z-index: 10;
+    width: 100%;
+    backdrop-filter: blur(2px);
+    text-align: center;
+    background-color: rgba(230, 207, 154, 0.5);
+}
+
+/* 時間軸行 - 每個時間點一行 */
+.timeline-row {
+    display: grid;
+    grid-template-columns: 70px repeat(5, 1fr);
+    position: relative;
+    margin-bottom: 20px;
+    align-items: start;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+}
+
+/* 水平時間線 */
+.timeline-row::after {
+    content: '';
+    position: absolute;
+    top: 45px; /* date-point中心位置 */
+    left: 35px; /* date-point的中心位置 */
+    right: 0;
+    height: 1px;
+    background-color: rgba(115, 115, 115, 0.5);
+    z-index: 0;
+}
+
+/* 手機版調整 */
+@media (max-width: 767px) {
+    .timeline-row::after {
+        top: 40px;
+    }
+}
+
+/* 平板版調整 */
+@media (min-width: 768px) and (max-width: 991px) {
+    .timeline-row::after {
+        top: 45px;
+    }
+}
+
+.timeline-row:last-child {
+    border-bottom: none;
+}
+
+/* 日期容器 */
+.date-container {
+    position: relative;
+    height: 100%;
+}
+
+/* 日期小圓點 - 手機版基本尺寸 */
+.date-point {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 12px;
+    top: 20px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    z-index: 5;
+    font-size: 14px;
+    line-height: 1.2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+/* 平板尺寸 */
+@media (min-width: 768px) {
+    .date-point {
+        width: 55px;
+        height: 55px;
+        left: 9px;
+        font-size: 16px;
+    }
+}
+
+/* 電腦尺寸 */
+@media (min-width: 992px) {
+    .date-point {
+        width: 70px;
+        height: 70px;
+        left: 0;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .timeline-content::before {
+        left: 33px;
+    }
+    
+    .timeline-row::after {
+        top: 55px;
+    }
+}
+
+/* 公司單元格 */
+.company-cell {
+    padding: 0 5px;
+    min-height: 10px;
+}
+
+/* 事件項目 */
+.timeline-item {
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.8;
+    margin: 0;
+    z-index: 2; /* 確保事件項目在水平線上方 */
+    cursor: pointer;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    opacity: 1;
+}
+
+/* 公司標籤 */
+.company-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 事件卡片內容 */
+.event-card {
+    padding: 15px;
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.event-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.event-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.event-description {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 縮略圖樣式 */
+.event-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.event-image.thumbnail {
+    max-height: 120px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* 公司顏色類 */
+.timeline-item.OpenAI .company-label {
+    background-color: #198754;
+}
+
+.timeline-item.Google .company-label {
+    background-color: #4285F4;
+}
+
+.timeline-item.Anthropic .company-label {
+    background-color: #7952B3;
+}
+
+.timeline-item.Meta .company-label {
+    background-color: #0668E1;
+}
+
+.timeline-item.其他 .company-label {
+    background-color: #6c757d;
+}
+
+/* 空白單元格 */
+.empty-cell {
+    grid-column: auto;
+}
+
+/* 隱藏過濾後的項目 */
+.timeline-item.hidden {
+    display: none;
+}
+
+/* 遮罩層 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 擴展卡片樣式 */
+.expanded-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
+    position: relative;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+}
+
+.expanded-card.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* 卡片容器滾動樣式 */
+.expanded-card::-webkit-scrollbar {
+    width: 8px;
+}
+
+.expanded-card::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.expanded-card::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.expanded-card::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 關閉按鈕 */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.close-button:hover {
+    background-color: #e0e0e0;
+    transform: rotate(90deg);
+}
+
+/* 擴展卡片公司標籤 */
+.expanded-card .company-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.expanded-card .company-tag.OpenAI {
+    background-color: #198754;
+}
+
+.expanded-card .company-tag.Google {
+    background-color: #4285F4;
+}
+
+.expanded-card .company-tag.Anthropic {
+    background-color: #7952B3;
+}
+
+.expanded-card .company-tag.Meta {
+    background-color: #0668E1;
+}
+
+.expanded-card .company-tag.其他 {
+    background-color: #6c757d;
+}
+
+/* 擴展卡片標題 */
+.expanded-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    color: #222;
+    line-height: 1.3;
+}
+
+/* 擴展卡片日期 */
+.expanded-date {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.expanded-date:before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: #666;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* 擴展卡片描述 */
+.expanded-description {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.expanded-description a {
+    color: #4285F4;
+    text-decoration: none;
+    border-bottom: 1px dotted #4285F4;
+}
+
+.expanded-description a:hover {
+    border-bottom: 1px solid #4285F4;
+}
+
+.expanded-description ul, .expanded-description ol {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.expanded-description li {
+    margin-bottom: 8px;
+}
+
+.expanded-description p {
+    margin-bottom: 15px;
+}
+
+/* 擴展卡片圖片 */
+.expanded-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.expanded-image:hover {
+    transform: scale(1.02);
+}
+
+/* 圖片容器 */
+.image-container {
+    width: 100%;
+    margin: 25px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+}
+
+/* 圖片說明 */
+.image-caption {
+    padding: 15px 20px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 圖片來源 */
+.image-credit {
+    padding: 0 20px 15px;
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+/* 參考資料區塊 */
+.reference-links {
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+    margin-top: 20px;
+}
+
+.reference-links h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.reference-links ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.reference-links li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.reference-links li:before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4285F4;
+}
+
+.reference-links a {
+    color: #4285F4;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+    word-break: break-all;
+}
+
+.reference-links a:hover {
+    border-bottom: 1px solid #4285F4;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .expanded-card {
+        padding: 30px 20px;
+        width: 95%;
+    }
+    
+    .expanded-title {
+        font-size: 22px;
+    }
+    
+    .expanded-description {
+        font-size: 16px;
+    }
+    
+    .close-button {
+        top: 15px;
+        right: 15px;
+        width: 32px;
+        height: 32px;
+    }
+} 

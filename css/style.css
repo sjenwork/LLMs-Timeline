@@ -1,0 +1,111 @@
+/* 基本樣式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100vw;
+    margin: 0 0;
+    padding: 20px;
+}
+
+/* 公司分類樣式 - 作為表頭 */
+.company-categories {
+    display: grid;
+    grid-template-columns: 70px repeat(5, 1fr);
+    border-bottom: 2px solid #e0e0e0;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 0;
+}
+
+.time-column-header,
+.company-column {
+    text-align: center;
+    padding: 10px 5px;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.time-column-header:hover,
+.company-column:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.company-column {
+    border-bottom: 3px solid currentColor;
+}
+
+.company-column.active {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 -3px 0 currentColor;
+}
+
+/* 公司顏色 */
+.openai {
+    color: #198754;
+    border-color: #198754;
+}
+
+.google {
+    color: #4285F4;
+    border-color: #4285F4;
+}
+
+.anthropic {
+    color: #7952B3;
+    border-color: #7952B3;
+}
+
+.meta {
+    color: #0668E1;
+    border-color: #0668E1;
+}
+
+.others {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* 內容容器 */
+.timeline-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-wrapper {
+    position: relative;
+    overflow-y: auto;
+    max-height: calc(100vh - 120px);
+}
+
+/* 篩選模式樣式 */
+body.filtering .company-cell {
+    transition: all 0.5s ease;
+}
+
+/* 篩選時隱藏的單元格樣式 */
+body.filtering .company-cell[style*="display: none"] {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/* 篩選時顯示的單元格樣式 */
+body.filtering .company-cell[style*="display: block"] {
+    transform: translateX(0);
+    opacity: 1;
+} 
