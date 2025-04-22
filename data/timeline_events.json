@@ -1,0 +1,121 @@
+[
+    {
+        "time": "2017-6-12",
+        "title": "Google發布Transformer架構",
+        "image": "https://miro.medium.com/max/1400/1*BHzGVskWGS_3jEcYYi6miQ.png",
+        "image_caption": "Transformer架構示意圖",
+        "image_credit": "Google"
+    },
+    {
+        "time": "2018-6-11",
+        "title": "OpenAI發布GPT-1",
+        "image": "https://pic.616pic.com/ys_img/00/58/25/Tq57QjfSmP.jpg",
+        "image_caption": "GPT-1架構",
+        "image_credit": "OpenAI"
+    },
+    {
+        "time": "2018-10-11",
+        "title": "Google發布BERT",
+        "image": "https://pic.616pic.com/ys_img/00/58/25/Tq57QjfSmP.jpg",
+        "image_caption": "BERT預訓練與微調過程示意圖",
+        "image_credit": "Google"
+    },
+    {
+        "time": "2019-2-14",
+        "title": "OpenAI發布GPT-2",
+        "image": "https://cdn.openai.com/research-covers/language-unsupervised/2x-no-mark.jpg",
+        "image_caption": "GPT-2生成的文本示例",
+        "image_credit": "OpenAI"
+    },
+    {
+        "time": "2020-5-28",
+        "title": "OpenAI發布GPT-3",
+        "image": "https://pic.616pic.com/ys_img/00/58/25/Tq57QjfSmP.jpg",
+        "image_caption": "GPT-3架構示意圖",
+        "image_credit": "OpenAI"
+    },
+    {
+        "time": "2020-10-20",
+        "title": "Google發布T5模型",
+        "image": "img/T5.jpg",
+        "image_caption": "T5統一的文本到文本框架",
+        "image_credit": "Google"
+    },
+    {
+        "time": "2021-1-5",
+        "title": "OpenAI發布DALL·E和CLIP",
+        "image": "img/Dall-E.webp",
+        "image_caption": "DALL·E生成的圖像示例",
+        "image_credit": "OpenAI"
+    },
+    {
+        "time": "2022-11-30",
+        "title": "OpenAI發布ChatGPT",
+        "image": "img/ChatGPT.png",
+        "image_caption": "ChatGPT界面示例",
+        "image_credit": "OpenAI"
+    },
+    {
+        "time": "2023-3-14",
+        "title": "OpenAI發布GPT-4",
+        "image": "img/GPT4.jpg",
+        "image_caption": "GPT-4性能對比圖",
+        "image_credit": "OpenAI"
+    },
+    {
+        "time": "2023-12-6",
+        "title": "Google發布Gemini 1.0系列",
+        "image": "img/Gemini 1.0.jpg",
+        "image_caption": "Gemini模型示意圖",
+        "image_credit": "Google"
+    },
+    {
+        "time": "2024-1-29",
+        "title": "Anthropic發布Claude 3系列",
+        "image": "img/Claude 3.jpg",
+        "image_caption": "Claude 3系列模型示意圖",
+        "image_credit": "Anthropic"
+    },
+    {
+        "time": "2024-2-15",
+        "title": "Google發布Gemini 1.5 Pro",
+        "image": "img/Gemini 1.5 Pro.png",
+        "image_caption": "Gemini 1.5 Pro超長上下文示意圖",
+        "image_credit": "Google"
+    },
+    {
+        "time": "2024-5-14",
+        "title": "OpenAI發布GPT-4o",
+        "image": "img/gpt-4o.png",
+        "image_caption": "GPT-4o多模態能力示例",
+        "image_credit": "OpenAI"
+    },
+    {
+        "time": "2024-11-15",
+        "title": "Anthropic發布Model Context Protocol (MCP)",
+        "image": "img/MCP.png",
+        "image_caption": "MCP架構示意圖",
+        "image_credit": "Anthropic"
+    },
+    {
+        "time": "2025-1-23",
+        "title": "OpenAI發布Operator",
+        "image": "img/openAI Operator.webp",
+        "image_caption": "OpenAI Operator示意圖",
+        "image_credit": "OpenAI"
+    },
+    {
+        "time": "2025-2-14",
+        "title": "Anthropic發布Claude 3.7 Sonnet",
+        "image": "img/Claude 3.7 Sonnet.webp",
+        "image_caption": "Claude 3.7 Sonnet思考模式示意圖",
+        "image_credit": "Anthropic"
+    },
+    {
+        "time": "2025-4-9",
+        "title": "Google發布Agent-to-Agent (A2A)協議",
+        "image": "img/A2A.png",
+        "image_caption": "A2A協議架構示意圖",
+        "image_credit": "Google"
+    }
+]
