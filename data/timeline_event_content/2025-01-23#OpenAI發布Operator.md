@@ -1,5 +1,5 @@
 **OpenAI發布Operator**
-時間：2025-1-23
+時間：2025-01-23
 OpenAI發布Operator，由Computer-Using Agent (CUA)驅動，成為OpenAI發布的第一個AI Agent。
 
 **核心技術：**

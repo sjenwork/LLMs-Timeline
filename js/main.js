@@ -3,7 +3,7 @@
  */
 document.addEventListener('DOMContentLoaded', () => {
     // 初始化時間軸
-    const timeline = new Timeline('data/timeline_data.json');
+    const timeline = new Timeline('data/timeline_events.json');
     
     // 處理窗口滾動事件
     window.addEventListener('scroll', () => {
@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 處理窗口調整大小事件
     window.addEventListener('resize', () => {
         // 調整時間軸高度
-        adjustTimelineHeight();
+        // adjustTimelineHeight();
         // 更新固定頭部
         handleStickyCategories();
     });
     
     // 初始調整時間軸高度
-    adjustTimelineHeight();
+    // adjustTimelineHeight();
     
     // 更新頁腳年份
     updateFooterYear();

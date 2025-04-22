@@ -1,5 +1,5 @@
 **Google發布Agent-to-Agent (A2A)協議**
-時間：2025-4-9
+時間：2025-04-09
 Google發布Agent-to-Agent (A2A)協議，用於AI代理之間的直接通信，與MCP形成互補關係。
 
 **A2A關鍵特性：**

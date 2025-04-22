@@ -1,5 +1,5 @@
 **Google發布Transformer架構**
-時間：2017-6-12
+時間：2017-06-12
 Google在*arXiv*上發表論文《Attention Is All You Need》，提出了革命性的Transformer架構。
 
 **核心創新：**

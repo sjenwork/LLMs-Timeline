@@ -1,5 +1,5 @@
 **Google發布Gemini 1.0系列**
-時間：2023-12-6
+時間：2023-12-06
 Google發布Gemini 1.0系列，包括Ultra、Pro和Nano三個版本，是Google首個原生多模態大型語言模型。
 
 **核心特點：**

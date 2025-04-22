@@ -90,9 +90,9 @@ class Timeline {
      * 根據日期排序事件（從新到舊）
      */
     sortEventsByDate() {
-        this.timelineData.events.sort((a, b) => {
-            const dateA = new Date(`${a.start_date.year}-${a.start_date.month}-${a.start_date.day}`);
-            const dateB = new Date(`${b.start_date.year}-${b.start_date.month}-${b.start_date.day}`);
+        this.timelineData.sort((a, b) => {
+            const dateA = new Date(a.time);
+            const dateB = new Date(b.time);
             return dateB - dateA; // 從新到舊排序
         });
     }
@@ -103,10 +103,11 @@ class Timeline {
     groupEventsByDate() {
         const eventsByDate = {};
         
-        this.timelineData.events.forEach(event => {
-            const year = event.start_date.year;
-            const month = event.start_date.month.padStart(2, '0');
-            const day = event.start_date.day.padStart(2, '0');
+        this.timelineData.forEach(event => {
+            const date = new Date(event.time);
+            const year = date.getFullYear().toString();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
             const dateKey = `${year}-${month}-${day}`;
             
             if (!eventsByDate[year]) {
@@ -115,7 +116,7 @@ class Timeline {
             
             if (!eventsByDate[year][dateKey]) {
                 eventsByDate[year][dateKey] = {
-                    date: new Date(dateKey),
+                    date: date,
                     events: {}
                 };
                 
@@ -126,16 +127,16 @@ class Timeline {
             }
             
             // 判斷事件屬於哪個公司
-            const headline = event.text.headline;
+            const title = event.title;
             let company = '其他';
             
-            if (headline.includes('OpenAI')) {
+            if (title.includes('OpenAI')) {
                 company = 'OpenAI';
-            } else if (headline.includes('Google')) {
+            } else if (title.includes('Google')) {
                 company = 'Google';
-            } else if (headline.includes('Anthropic')) {
+            } else if (title.includes('Anthropic')) {
                 company = 'Anthropic';
-            } else if (headline.includes('Meta')) {
+            } else if (title.includes('Meta')) {
                 company = 'Meta';
             }
             
@@ -205,7 +206,7 @@ class Timeline {
                         
                         // 添加點擊事件
                         timelineItem.addEventListener('click', () => {
-                            this.expandcard(event, company);
+                            this.expandCard(event, company);
                         });
                         
                         cell.appendChild(timelineItem);
@@ -235,8 +236,8 @@ class Timeline {
         timelineItem.innerHTML = `
             <div class="company-label">${company}</div>
             <div class="event-card">
-                <h3 class="event-title">${event.text.headline}</h3>
-                ${event.media && event.media.url ? `<img class="event-image thumbnail" src="${event.media.url}" alt="${event.text.headline}">` : ''}
+                <h3 class="event-title">${event.title}</h3>
+                ${event.image ? `<img class="event-image thumbnail" src="${event.image}" alt="${event.title}">` : ''}
             </div>
         `;
         
@@ -244,54 +245,114 @@ class Timeline {
     }
 
     /**
+     * 加載事件內容
+     */
+    async loadEventContent(event) {
+        try {
+            const date = new Date(event.time);
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            const dateStr = `${year}-${month}-${day}`;
+            
+            const fileName = `${dateStr}#${event.title}`;
+            // fileName 中不能有特殊字符，所以需要做 url encode
+            const encodedFileName = encodeURIComponent(fileName);
+            const response = await fetch(`data/timeline_event_content/${encodedFileName}.md`);
+            
+            if (!response.ok) {
+                throw new Error(`無法載入內容文件: ${fileName}.md`);
+            }
+            
+            const content = await response.text();
+            return this.markdownToHtml(content);
+        } catch (error) {
+            console.error('加載事件內容失敗:', error);
+            return `<p>無法載入事件內容。</p>`;
+        }
+    }
+    
+    /**
+     * 將Markdown轉換為HTML
+     */
+    markdownToHtml(markdown) {
+        // 簡單的Markdown轉HTML實現
+        let html = markdown
+            // 將連續換行轉換為段落
+            .replace(/\n\n/g, '</p><p>')
+            // 處理標題
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            // 處理列表項
+            .replace(/^\* (.*?)$/gm, '<li>$1</li>')
+            // 將列表項包裝在ul中
+            .replace(/<li>.*?<\/li>/gs, match => `<ul>${match}</ul>`)
+            // 處理連結
+            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
+        
+        // 確保包裝在段落中
+        if (!html.startsWith('<p>')) {
+            html = `<p>${html}`;
+        }
+        if (!html.endsWith('</p>')) {
+            html = `${html}</p>`;
+        }
+        
+        return html;
+    }
+
+    /**
      * 展開卡片
      */
-    expandCard(event, company) {
+    async expandCard(event, company) {
         // 設置當前事件
         this.currentEvent = event;
         
         // 獲取日期
-        const year = event.start_date.year;
-        const month = event.start_date.month.padStart(2, '0');
-        const day = event.start_date.day.padStart(2, '0');
-        const dateObj = new Date(`${year}-${month}-${day}`);
+        const date = new Date(event.time);
         
         // 格式化日期
-        const formattedDate = `${dateObj.getFullYear()}年${dateObj.getMonth() + 1}月${dateObj.getDate()}日`;
+        const formattedDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
         
-        // 處理描述文本，保留HTML結構
-        let description = event.text.text;
+        // 添加載入中提示
+        this.expandedCard.innerHTML = `
+            <button class="close-button">×</button>
+            <div class="loading-indicator">載入中...</div>
+        `;
+        
+        // 顯示遮罩和卡片
+        this.overlay.classList.add('active');
+        setTimeout(() => {
+            this.expandedCard.classList.add('active');
+        }, 50);
         
         // 禁止背景滾動
         document.body.style.overflow = 'hidden';
+        
+        // 加載事件內容
+        const content = await this.loadEventContent(event);
+        
+        // 提取參考資料連結
+        const referenceLinks = this.extractReferenceLinks(content);
         
         // 填充展開卡片內容
         this.expandedCard.innerHTML = `
             <button class="close-button">×</button>
             <div class="company-tag ${company}">${company}</div>
-            <h2 class="expanded-title">${event.text.headline}</h2>
+            <h2 class="expanded-title">${event.title}</h2>
             <div class="expanded-date">${formattedDate}</div>
-            <div class="expanded-description">${description}</div>
-            ${event.media && event.media.url ? 
+            <div class="expanded-description">${content}</div>
+            ${event.image ? 
                 `<div class="image-container">
-                    <img class="expanded-image" src="${event.media.url}" alt="${event.text.headline}">
-                    ${event.media.caption ? `<div class="image-caption">${event.media.caption}</div>` : ''}
-                    ${event.media.credit ? `<div class="image-credit">來源: ${event.media.credit}</div>` : ''}
+                    <img class="expanded-image" src="${event.image}" alt="${event.title}">
+                    ${event.image_caption ? `<div class="image-caption">${event.image_caption}</div>` : ''}
+                    ${event.image_credit ? `<div class="image-credit">來源: ${event.image_credit}</div>` : ''}
                 </div>` 
                 : ''}
             
-            ${event.text.headline.includes('發布') ? 
+            ${referenceLinks ? 
                 `<div class="reference-links">
                     <h3>參考資料</h3>
-                    <ul>
-                        ${event.text.text.includes('href') ? 
-                            event.text.text.match(/<a href=["'](.*?)["']/g)
-                                ?.map(href => {
-                                    const url = href.replace(/<a href=["']/, '').replace(/["']$/, '');
-                                    return `<li><a href="${url}" target="_blank">${url}</a></li>`;
-                                }).join('') || ''
-                            : ''}
-                    </ul>
+                    <ul>${referenceLinks}</ul>
                 </div>`
                 : ''}
         `;
@@ -299,14 +360,21 @@ class Timeline {
         // 重新綁定關閉按鈕事件
         const closeButton = this.expandedCard.querySelector('.close-button');
         closeButton.addEventListener('click', () => this.closeExpandedCard());
+    }
+    
+    /**
+     * 從內容中提取參考資料連結
+     */
+    extractReferenceLinks(content) {
+        const linkRegex = /<a href="(.*?)".*?>(.*?)<\/a>/g;
+        let match;
+        let links = '';
         
-        // 顯示遮罩和卡片
-        this.overlay.classList.add('active');
+        while ((match = linkRegex.exec(content)) !== null) {
+            links += `<li><a href="${match[1]}" target="_blank">${match[2]}</a></li>`;
+        }
         
-        // 延遲一下再顯示卡片，以便有動畫效果
-        setTimeout(() => {
-            this.expandedCard.classList.add('active');
-        }, 50);
+        return links;
     }
     
     /**

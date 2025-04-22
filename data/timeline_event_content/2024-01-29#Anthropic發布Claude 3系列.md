@@ -1,5 +1,5 @@
 **Anthropic發布Claude 3系列**
-時間：2024-1-29
+時間：2024-01-29
 Anthropic發布Claude 3系列，包括Haiku、Sonnet和Opus三個版本，在多個基準測試中表現卓越。
 
 **核心特點：**

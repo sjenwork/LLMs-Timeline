@@ -1,6 +1,6 @@
 import json
 from markdownify import markdownify as md
-
+import datetime
 
 with open("data/timeline_data_2.json", "r") as f:
     data = json.load(f)
@@ -15,9 +15,12 @@ res_dict = {}
 
 
 for event in data_dict["events"]:
-    res_dict["time"] = (
-        event["start_date"]["year"] + "-" + event["start_date"]["month"] + "-" + event["start_date"]["day"]
-    )
+    res_dict["time"] = datetime.datetime(
+        int(event["start_date"]["year"]),
+        int(event["start_date"]["month"]),
+        int(event["start_date"]["day"]),
+    ).strftime("%Y-%m-%d")
+
     res_dict["title"] = event["text"]["headline"]
     res_dict["image"] = event["media"]["url"]
     res_dict["image_caption"] = event["media"]["caption"]
